@@ -5,6 +5,7 @@
  */
 package jurnal8stana;
 
+import static java.lang.Double.sum;
 import java.util.Scanner;
 
 /**
@@ -18,7 +19,7 @@ public class JURNAL8STANA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    System.out.print("Jumlah Deret Fibonacci:");
+    System.out.println("Jumlah Deret Fibonacci:");
         Scanner inputFibonacci = new Scanner(System.in);
         
         int fibonacciCount = inputFibonacci.nextInt();
@@ -30,17 +31,27 @@ public class JURNAL8STANA {
     }
       public static int methodFibonacci(int fibonacciInput)
     {   
-        int x;
-        int n = fibonacciInput;
-        if(n <=0 || n<=1)
-        {
-           return n; 
-        }
-       
-        else
-        {
-            return methodFibonacci(n-2) + methodFibonacci(n-1) ;
-        }
-            
+        int sum=0;
+// Initialize some variables
+    int current, prev = 1, prevprev = 0;
+// Loop exactly 10 times 
+   for(int i = 0; i < fibonacciInput; i++)           
+    {
+// Next number is sum of previous two 
+      current = prev + prevprev;        
+      System.out.println(current + " ");// Print it out
+       sum+=current;
+// First previous becomes 2nd previous 
+      prevprev = prev;
+// And current number becomes previous                  
+      prev = current;                   
     }
-}
+// Terminate the line, and flush output 
+    System.out.println();               
+    System.out.print("Result= " + sum);
+    
+    return sum;
+  }
+          }
+      
+         
