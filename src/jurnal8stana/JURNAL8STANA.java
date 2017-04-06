@@ -23,7 +23,7 @@ public class JURNAL8STANA {
         
         int fibonacciCount = inputFibonacci.nextInt();
         
-        for (int ii=0; ii < fibonacciCount; ii++)
+        for (int ii=fibonacciCount; ii > 0; ii--)
         {
             System.out.println("Bilangan Fibonacci: " + methodFibonacci(ii));
         }
